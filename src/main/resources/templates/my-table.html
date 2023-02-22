@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>My Table</title>
+  <style>
+table {
+  border-collapse: collapse;
+  width: 90%;
+  font-size:14px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th, td {
+  text-align: left;
+  padding: 7px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+tr:hover {background-color: #29b6f6 ;}
+</style>
+</head>
+<h1>Spring Boot Uploaded file table</h1>
+<body>
+<table>
+  <thead>
+  <tr>
+    <th th:each="column : ${rows[0].keySet()}" th:text="${column}"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="row : ${rows}">
+    <td th:each="column : ${row.keySet()}" th:text="${row.get(column)}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
