@@ -3,10 +3,7 @@ package com.example.csv_to_db;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -17,6 +14,7 @@ public class CsvToDbApplication extends Detector{
 
 	public static void main(String[] args) {
 		//Run application server on Access http://localhost:8080/ from spring boot MVN command: mvn spring-boot:run
+		new File("./uploads/").mkdir();
 		SpringApplication.run(CsvToDbApplication.class, args);
 		System.out.println("Hello people");
 
